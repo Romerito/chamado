@@ -1,1 +1,30 @@
-<p>chamado works!</p>
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-50">
+        <!-- Login -->
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <form [formGroup]="chamadoForm"  (ngSubmit)="onSubmit()"  *ngIf="chamadoForm">
+            <div class="form-outline mb-4">
+              <h5>  <label for="titulo" class="form-label text-primary">Titulo do chamado</label></h5>
+              <input class="form-control" id="titulo" name="titulo" formControlName="titulo" (ngModelChange)="setCleanTitulo()" />
+              <label class="text-danger">{{titulo}}</label>
+          </div>
+            <div class="form-outline mb-4">
+              <h5>  <label for="descricao" class="form-label text-primary">Descrição do chamado</label></h5>
+              <textarea class="form-control" id="descricao" name="descricao" rows="6" formControlName="descricao" (ngModelChange)="setCleanDescricao()"></textarea>
+              <label class="text-danger">{{descricao}}</label>
+            </div>
+            <div>
+              <h5>  <label for="arquivo" class="form-label text-primary">Anexar arquivo</label></h5>
+              <input class="form-control form-control-lg text-primary" id="arquivo" name="arquivo" type="file" formControlName="arquivo">
+            </div>
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <button type="submit" class="btn btn-primary btn-lg"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;">Abrir Chamado</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  
