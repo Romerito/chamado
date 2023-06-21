@@ -8,7 +8,7 @@ background: #eee;
 .h-custom {
 height: calc(100% - 73px);
 }
-@media (max-width: 450px) {
+@media (max-width: 550px) {
 .h-custom {
 height: 100%;
 }

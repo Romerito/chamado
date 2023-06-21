@@ -1,30 +1,69 @@
+
+
 <section class="vh-100">
     <div class="container-fluid h-custom">
-      <div class="row d-flex justify-content-center align-items-center h-50">
+      <div class="row d-flex justify-content-center align-items-center h-100">
         <!-- Login -->
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
           <form [formGroup]="chamadoForm"  (ngSubmit)="onSubmit()"  *ngIf="chamadoForm">
-            <div class="form-outline mb-4">
-              <h5>  <label for="titulo" class="form-label text-primary">Titulo do chamado</label></h5>
+            <div class="form-outline mb-2">
+              <h6>  <label for="titulo" class="form-label text-primary">Titulo do chamado</label></h6>
               <input class="form-control" id="titulo" name="titulo" formControlName="titulo" (ngModelChange)="setCleanTitulo()" />
               <label class="text-danger">{{titulo}}</label>
           </div>
-            <div class="form-outline mb-4">
-              <h5>  <label for="descricao" class="form-label text-primary">Descrição do chamado</label></h5>
+            <div class="form-outline mb-2">
+              <h6>  <label for="descricao" class="form-label text-primary">Descrição do chamado</label></h6>
               <textarea class="form-control" id="descricao" name="descricao" rows="6" formControlName="descricao" (ngModelChange)="setCleanDescricao()"></textarea>
               <label class="text-danger">{{descricao}}</label>
             </div>
             <div>
-              <h5>  <label for="arquivo" class="form-label text-primary">Anexar arquivo</label></h5>
-              <input class="form-control form-control-lg text-primary" id="arquivo" name="arquivo" type="file" formControlName="arquivo">
+              <h6>  <label for="arquivo" class="form-label text-primary">Anexar arquivo</label></h6>
+              <input class="form-control text-primary " id="arquivo" name="arquivo" type="file" formControlName="arquivo">
             </div>
-            <div class="text-center text-lg-start mt-4 pt-2">
-              <button type="submit" class="btn btn-primary btn-lg"
+            <div class="text-center pt-4">
+              <button type="submit" class="btn btn-primary"
               style="padding-left: 2.5rem; padding-right: 2.5rem;">Abrir Chamado</button>
             </div>
+            
           </form>
         </div>
+      <div class="row d-flex justify-content-center "*ngIf="listarChamado">
+        <div class="col-md-8 ">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Protocolo</th>
+                <th scope="col">Tit. chamado</th>
+                <th scope="col">Des. do chamado</th>
+                <th scope="col">Arquivo</th>
+                <th scope="col">Status</th>
+                <th scope="col">Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">0000000000</th>
+                <td>Sem acesso</td>
+                <td>Sem acesso a internet</td>
+                <td>Arquivo</td>
+                <td>Aberto</td>
+                <td style="text-align: center;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-pencil-square" viewBox="0 0 16 16">
+                    <path
+                      d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                    <path fill-rule="evenodd"
+                      d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                  </svg>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
+  </div>
+  </div>
   </section>
+  
+  
   

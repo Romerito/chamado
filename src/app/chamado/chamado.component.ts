@@ -13,6 +13,7 @@ export class ChamadoComponent implements OnInit {
 
   titulo!: string;
   descricao!: string;
+  listarChamado!: boolean;
 
   
   constructor(private formBuilder: FormBuilder) { }
@@ -38,6 +39,7 @@ export class ChamadoComponent implements OnInit {
         return;
       }
     }
+    this.listarChamado = true;
     console.log(this.chamadoForm.value.title)
 
   }
