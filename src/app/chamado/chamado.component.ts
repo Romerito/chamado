@@ -32,7 +32,6 @@ export class ChamadoComponent implements OnInit {
    // this.router.navigate(['/chamado']);
   }
   
-  
   createForm(chamado: ChamadoDTOComponent) {
     this.chamadoForm =  this.formBuilder.group({
       titulo: new FormControl(chamado.titulo),
@@ -42,19 +41,17 @@ export class ChamadoComponent implements OnInit {
   }
 
   onSubmit(){
-    if(this.chamadoForm.value.titulo == '' || this.chamadoForm.value.titulo == null && this.chamadoForm.value.titulo != 'Selecione'){
+    if(this.chamadoForm.value.titulo == '' || this.chamadoForm.value.titulo == null || this.chamadoForm.value.titulo == 'Selecione'){
       this.titulo = 'Preencher o título do chamado';
       return;
     }
     if(this.chamadoForm.value.descricao == '' || this.chamadoForm.value.descricao == null){
-      this.descricao = 'Preencher o titulo do descrição';
+      this.descricao = 'Preencher a descrição do chamado';
       return;
     }
     this.showFormChamado = false;
     this.showNovoChamado = true;
     this.listarChamado = true;
-    this.titulo = '';
-    this.descricao = '';
     console.log(this.chamadoForm.value.title)
 
   }
