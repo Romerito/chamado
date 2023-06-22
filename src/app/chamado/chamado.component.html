@@ -19,12 +19,11 @@
             <h6> <label for="titulo" class="form-label text-primary">Titulo do chamado</label></h6>
 
             <select class="form-select" formControlName="titulo" (ngModelChange)="setCleanTitulo()">
-              <option selected (ngModelChange)="setCleanTitulo()">Selecione</option>
-              <option formControlName="titulo" (ngModelChange)="setCleanTitulo()">Sem acesso</option>
-              <option formControlName="titulo"(ngModelChange)="setCleanTitulo()">Acesso lento</option>
-              <option formControlName="titulo"(ngModelChange)="setCleanTitulo()">Mudança de Plano</option>
-              <option formControlName="titulo"(ngModelChange)="setCleanTitulo()">Mudança de endereço</option>
-              <option formControlName="titulo"(ngModelChange)="setCleanTitulo()"> Outros assuntos</option>
+              <option>Sem acesso</option>
+              <option>Acesso lento</option>
+              <option>Mudança de Plano</option>
+              <option>Mudança de endereço</option>
+              <option> Outros assuntos</option>
             </select>
             
           </div>
@@ -99,7 +98,7 @@
             <td>0000000000</td>
             <td>Sem acesso</td>
             <td>Identificando defeito</td>
-            <td>Arquivo</td>
+            <td>N/A</td>
             <td>Andamento</td>
           </tr>
         </tbody>

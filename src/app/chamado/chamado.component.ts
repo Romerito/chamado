@@ -41,8 +41,8 @@ export class ChamadoComponent implements OnInit {
   }
 
   onSubmit(){
-    if(this.chamadoForm.value.titulo == '' || this.chamadoForm.value.titulo == null || this.chamadoForm.value.titulo == 'Selecione'){
-      this.titulo = 'Preencher o título do chamado';
+    if(this.chamadoForm.value.titulo == '' || this.chamadoForm.value.titulo == null){
+      this.titulo = 'Selecionar o título do chamado';
       return;
     }
     if(this.chamadoForm.value.descricao == '' || this.chamadoForm.value.descricao == null){
