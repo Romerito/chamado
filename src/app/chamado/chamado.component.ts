@@ -14,6 +14,7 @@ export class ChamadoComponent implements OnInit {
 
   titulo!: string;
   descricao!: string;
+  arquivo!: string;
   listarChamado!: boolean;
 
   showNovoChamado: boolean = true;
@@ -25,6 +26,7 @@ export class ChamadoComponent implements OnInit {
   novoChamado(){
     this.showFormChamado = true;
     this.showNovoChamado = false;
+    this.createForm(new ChamadoDTOComponent());
   }
   
   ngOnInit() {
