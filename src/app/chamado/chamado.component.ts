@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ChamadoDTOComponent } from './chamadoDTO.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-chamado',
@@ -15,11 +16,20 @@ export class ChamadoComponent implements OnInit {
   descricao!: string;
   listarChamado!: boolean;
 
+  showNovoChamado: boolean = true;
+  showFormChamado!: boolean;
+
   
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private router: Router) { }
+
+  novoChamado(){
+    this.showFormChamado = true;
+    this.showNovoChamado = false;
+  }
   
   ngOnInit() {
     this.createForm(new ChamadoDTOComponent());
+   // this.router.navigate(['/chamado']);
   }
   
   
@@ -32,20 +42,25 @@ export class ChamadoComponent implements OnInit {
   }
 
   onSubmit(){
-    if(this.chamadoForm.value.titulo == '' || this.chamadoForm.value.titulo == null){
+    if(this.chamadoForm.value.titulo == '' || this.chamadoForm.value.titulo == null && this.chamadoForm.value.titulo != 'Selecione'){
       this.titulo = 'Preencher o título do chamado';
-      if(this.chamadoForm.value.descricao == '' || this.chamadoForm.value.descricao == null){
-        this.descricao = 'Preencher o titulo do descrição';
-        return;
-      }
+      return;
     }
+    if(this.chamadoForm.value.descricao == '' || this.chamadoForm.value.descricao == null){
+      this.descricao = 'Preencher o titulo do descrição';
+      return;
+    }
+    this.showFormChamado = false;
+    this.showNovoChamado = true;
     this.listarChamado = true;
+    this.titulo = '';
+    this.descricao = '';
     console.log(this.chamadoForm.value.title)
 
   }
 
   setCleanTitulo (){
-    this.title = '';
+    this.titulo = '';
   }
 
   setCleanDescricao (){
