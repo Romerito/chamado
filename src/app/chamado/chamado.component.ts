@@ -23,6 +23,12 @@ export class ChamadoComponent implements OnInit {
   
   constructor(private formBuilder: FormBuilder, private router: Router) { }
 
+  cancelarChamado(){
+    this.showFormChamado = false;
+    this.showNovoChamado = true;
+    this.createForm(new ChamadoDTOComponent());
+  }
+
   novoChamado(){
     this.showFormChamado = true;
     this.showNovoChamado = false;
